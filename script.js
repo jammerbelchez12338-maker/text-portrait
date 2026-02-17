@@ -1,28 +1,28 @@
 const canvas = document.getElementById('portraitCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 800;
+canvas.height = 800;
 
 const text = "I love you";
 
 const img = new Image();
-img.src = 'https://i.postimg.cc/GtQz3s0n/herpicture-jpg.jpg'; // you can replace this with your own image URL
+img.crossOrigin = "anonymous"; // important if image is from another site
+img.src = 'https://i.postimg.cc/GtQz3s0n/herpicture-jpg.jpg'; // replace with your image
 
 img.onload = function() {
     const hiddenCanvas = document.createElement('canvas');
     const hiddenCtx = hiddenCanvas.getContext('2d');
 
-    hiddenCanvas.width = 800;
-    hiddenCanvas.height = 800;
+    hiddenCanvas.width = 100; // lower resolution for testing
+    hiddenCanvas.height = 100;
 
     hiddenCtx.drawImage(img, 0, 0, hiddenCanvas.width, hiddenCanvas.height);
 
     const imageData = hiddenCtx.getImageData(0, 0, hiddenCanvas.width, hiddenCanvas.height);
     const pixels = imageData.data;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = 'black';
     ctx.textBaseline = 'top';
 
     const cellSize = 6;
@@ -42,4 +42,4 @@ img.onload = function() {
             ctx.fillText(text, x * cellSize, y * cellSize);
         }
     }
-}
+};
