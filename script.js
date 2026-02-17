@@ -13,8 +13,8 @@ img.onload = function() {
     const hiddenCanvas = document.createElement('canvas');
     const hiddenCtx = hiddenCanvas.getContext('2d');
 
-    hiddenCanvas.width = 200;
-    hiddenCanvas.height = 200;
+    hiddenCanvas.width = 800;
+    hiddenCanvas.height = 800;
 
     hiddenCtx.drawImage(img, 0, 0, hiddenCanvas.width, hiddenCanvas.height);
 
@@ -22,7 +22,7 @@ img.onload = function() {
     const pixels = imageData.data;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'red';
     ctx.textBaseline = 'top';
 
     const cellSize = 6;
