@@ -7,14 +7,13 @@ canvas.height = 800;
 const text = "I love you";
 
 const img = new Image();
-img.crossOrigin = "anonymous"; // important if image is from another site
-img.src = 'https://i.postimg.cc/GtQz3s0n/herpicture-jpg.jpg'; // replace with your image
+img.src = 'herpicture.jpg'; // use the file you uploaded
 
 img.onload = function() {
     const hiddenCanvas = document.createElement('canvas');
     const hiddenCtx = hiddenCanvas.getContext('2d');
 
-    hiddenCanvas.width = 100; // lower resolution for testing
+    hiddenCanvas.width = 100; 
     hiddenCanvas.height = 100;
 
     hiddenCtx.drawImage(img, 0, 0, hiddenCanvas.width, hiddenCanvas.height);
