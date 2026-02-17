@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 const text = "I love you";
 
 const img = new Image();
-img.src = 'https://i.ibb.co/8x7v5Ft/sample-face.jpg'; // you can replace this with your own image URL
+img.src = 'https://i.postimg.cc/GtQz3s0n/herpicture-jpg.jpg'; // you can replace this with your own image URL
 
 img.onload = function() {
     const hiddenCanvas = document.createElement('canvas');
